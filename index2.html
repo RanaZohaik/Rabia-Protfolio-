@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beautiful Profile Page</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: "Poppins", sans-serif;
+            background: linear-gradient(135deg, #f3f5f9, #d6e0f0);
+            padding: 0;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        /* 🔹 Modern Navigation Bar */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 15px 20px;
+            background: rgba(14, 69, 120, 0.9);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            animation: fadeInDown 1s ease-in-out;
+        }
+
+        .nav__content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* 🔹 Logo Styling */
+        .nav__content .logo a {
+            color: white;
+            text-decoration: none;
+            font-size: 26px;
+            font-weight: bold;
+            transition: 0.3s ease-in-out;
+        }
+
+        .nav__content .logo a:hover {
+            color:  #eeedec;
+            transform: scale(1.1);
+        }
+
+        /* 🔹 Navigation Links */
+        .nav__content ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav__content ul li {
+            margin-left: 25px;
+        }
+
+        .nav__content ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .nav__content ul li a:hover {
+            background: #f7f6f4;
+            color: #000;
+            box-shadow: 0 0 10px rgba(255, 235, 59, 0.5);
+        }
+
+        /* 🔹 Mobile Menu */
+        .menu-icon {
+            display: none;
+            font-size: 28px;
+            color: white;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .menu-icon {
+                display: block;
+            }
+
+            .nav__content ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background: rgba(14, 69, 120, 0.95);
+                padding: 15px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            }
+
+            .nav__content ul li {
+                margin: 10px 0;
+                text-align: center;
+            }
+
+            .nav__content ul li a {
+                font-size: 18px;
+            }
+
+            #menu-toggle:checked + ul {
+                display: flex;
+            }
+        }
+
+        /* 🔹 Profile Section */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 120px;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        /* Glassmorphism Card */
+        .info, .progress-container {
+            width: 45%;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: 0.4s ease-in-out;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .info:hover, .progress-container:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Info Styling */
+        .info div {
+            margin-bottom: 12px;
+            font-size: 18px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .info div span {
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        /* Progress Bar */
+        .progress-label {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            background-color: #e0e0e0;
+            border-radius: 20px;
+            padding: 3px;
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+
+        .progress-bar-fill {
+            display: block;
+            height: 20px;
+            border-radius: 20px;
+            background: linear-gradient(90deg, #ff2e2e, #ff914d);
+            text-align: right;
+            padding-right: 10px;
+            line-height: 20px;
+            color: white;
+            font-weight: bold;
+            transition: width 1.5s ease-in-out;
+        }
+
+        /* 🔹 Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .info, .progress-container {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav__content">
+            <div class="logo"><a href="#">Rabia</a></div>
+            <input type="checkbox" id="menu-toggle" style="display: none;">
+            <label for="menu-toggle" class="menu-icon">&#9776;</label>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index2.html">About</a></li>
+                <li><a href="index3.html">Education</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Profile Section -->
+    <div class="container">
+        <div class="info">
+            <div><span>Birthday:</span> 10 Feb, 2004</div>
+            <div><span>Degree:</span> Software Engineer</div>
+            <div><span>City:</span> Gujrat</div>
+            <div><span>Age:</span> 20</div>
+            <div><span>Email:</span> rabiibutt64@gmail.com</div>
+            <div><span>Phone:</span> +92-3150774963</div>
+        </div>
+
+        <div class="progress-container">
+            <div class="progress-label">Html</div>
+            <div class="progress-bar"><span class="progress-bar-fill" style="width: 86%;">86%</span></div>
+            <div class="progress-label">CSS</div>
+            <div class="progress-bar"><span class="progress-bar-fill" style="width: 76%;">76%</span></div>
+            <div class="progress-label">BootStrap</div>
+            <div class="progress-bar"><span class="progress-bar-fill" style="width: 66%;">66%</span></div>
+        </div>
+    </div>
+
+</body>
+
+</html>

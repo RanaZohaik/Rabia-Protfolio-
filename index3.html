@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education Timeline</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: "Poppins", sans-serif;
+            background: #f4f4f4;
+            padding: 0;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        /* 🔹 Modern Navigation Bar */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 15px 20px;
+            background: #0e4584;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .nav__content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .nav__content .logo a {
+            color: white;
+            text-decoration: none;
+            font-size: 26px;
+            font-weight: bold;
+            transition: 0.3s ease-in-out;
+        }
+
+        .nav__content .logo a:hover {
+            color:  #ca8a04;
+            transform: scale(1.1);
+        }
+
+        .nav__content ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav__content ul li {
+            margin-left: 25px;
+        }
+
+        .nav__content ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .nav__content ul li a:hover {
+            background:  #f4f4f2;
+            color: #000;
+            box-shadow: 0 0 10px rgba(255, 235, 59, 0.5);
+        }
+
+        /* 🔹 Education Timeline Section */
+        .education-container {
+            max-width: 800px;
+            margin: 120px auto 40px;
+            padding: 30px;
+            background: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        h2 {
+            font-size: 30px;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            font-weight: bold;
+        }
+
+        /* 🔹 Timeline */
+        .timeline {
+            position: relative;
+            margin: 20px 0;
+            padding-left: 30px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 15px;
+            width: 3px;
+            background: #0e4584;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin: 30px 0;
+            padding: 20px;
+            padding-left: 50px;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: 0.3s ease-in-out;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .timeline-item.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .timeline-item:hover {
+            transform: scale(1.03);
+            background: #f9f9f9;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 6px;
+            top: 20px;
+            width: 20px;
+            height: 20px;
+            background: white;
+            border: 3px solid #1a53e5;
+            border-radius: 50%;
+            transition: 0.3s ease-in-out;
+        }
+
+        .timeline-item:hover::before {
+            background: #1a53e5;
+            box-shadow: 0 0 10px rgba(26, 83, 229, 0.7);
+        }
+
+        .timeline-item h3 {
+            font-size: 22px;
+            color: #1a53e5;
+            margin-bottom: 5px;
+        }
+
+        .timeline-item p {
+            color: #555;
+            font-size: 16px;
+        }
+
+        .date {
+            font-size: 14px;
+            color: #999;
+        }
+
+        .result-btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 15px;
+            background: #1a53e5;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: 0.3s ease-in-out;
+            font-weight: bold;
+        }
+
+        .result-btn:hover {
+            background: #0f3bbf;
+            box-shadow: 0 0 10px rgba(26, 83, 229, 0.7);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .education-container {
+                width: 90%;
+            }
+
+            .timeline::before {
+                left: 10px;
+            }
+
+            .timeline-item {
+                padding-left: 30px;
+            }
+
+            .timeline-item::before {
+                left: 0px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav__content">
+            <div class="logo"><a href="#">Rabia</a></div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index2.html">About</a></li>
+                <li><a href="index3.html">Education</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Education Timeline -->
+    <div class="education-container">
+        <h2>Education</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <span class="date">2018 - 2020</span>
+                <h3>Matric In Biology</h3>
+                <p>I achieved an impressive score of 884 out of 1100 in my matric exams from Municipal Model High School Gujrat.</p>
+                <a href="Matric.jpg" class="result-btn">View Result</a>
+            </div>
+            <div class="timeline-item">
+                <span class="date">2020 - 2022</span>
+                <h3>FSc Pre-Engineering</h3>
+                <p>I completed my FSc Pre-Engineering from Govt. College For Women, Marghzar Colony Gujrat, scoring 728 out of 1100 marks.</p>
+                <a href="Inter.jpg" class="result-btn">View Result</a>
+            </div>
+            <div class="timeline-item">
+                <span class="date">2022 - Present</span>
+                <h3>BS Software Engineering</h3>
+                <p>I am currently pursuing a Bachelor of Science in Software Engineering at the University of Gujrat.</p>
+                <a href="Transcript.jpg" class="result-btn">View Transcript</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("scroll", function() {
+            document.querySelectorAll(".timeline-item").forEach(item => {
+                if (item.getBoundingClientRect().top < window.innerHeight - 50) {
+                    item.classList.add("show");
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
