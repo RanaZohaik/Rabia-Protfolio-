@@ -37,7 +37,6 @@
             margin: auto;
         }
 
-        /* 🔹 Logo Styling */
         .nav__content .logo a {
             color: white;
             text-decoration: none;
@@ -47,11 +46,10 @@
         }
 
         .nav__content .logo a:hover {
-            color:  #eeedec;
+            color: #eeedec;
             transform: scale(1.1);
         }
 
-        /* 🔹 Navigation Links */
         .nav__content ul {
             list-style: none;
             display: flex;
@@ -78,7 +76,7 @@
             box-shadow: 0 0 10px rgba(255, 235, 59, 0.5);
         }
 
-        /* 🔹 Mobile Menu */
+        /* 🔹 Mobile Navigation */
         .menu-icon {
             display: none;
             font-size: 28px;
@@ -128,7 +126,7 @@
             animation: fadeInUp 1s ease-in-out;
         }
 
-        /* Glassmorphism Card */
+        /* 🔹 Responsive Profile Card */
         .info, .progress-container {
             width: 45%;
             background: rgba(255, 255, 255, 0.2);
@@ -222,6 +220,7 @@
             }
         }
 
+        /* 🔹 Responsive Adjustments */
         @media (max-width: 768px) {
             .container {
                 flex-direction: column;
@@ -237,7 +236,7 @@
 
 <body>
 
-    <!-- Navigation Bar -->
+    <!-- 🔹 Navigation Bar -->
     <nav>
         <div class="nav__content">
             <div class="logo"><a href="#">Rabia</a></div>
@@ -251,7 +250,7 @@
         </div>
     </nav>
 
-    <!-- Profile Section -->
+    <!-- 🔹 Profile Section -->
     <div class="container">
         <div class="info">
             <div><span>Birthday:</span> 10 Feb, 2004</div>
@@ -263,11 +262,11 @@
         </div>
 
         <div class="progress-container">
-            <div class="progress-label">Html</div>
+            <div class="progress-label">HTML</div>
             <div class="progress-bar"><span class="progress-bar-fill" style="width: 86%;">86%</span></div>
             <div class="progress-label">CSS</div>
             <div class="progress-bar"><span class="progress-bar-fill" style="width: 76%;">76%</span></div>
-            <div class="progress-label">BootStrap</div>
+            <div class="progress-label">Bootstrap</div>
             <div class="progress-bar"><span class="progress-bar-fill" style="width: 66%;">66%</span></div>
         </div>
     </div>
